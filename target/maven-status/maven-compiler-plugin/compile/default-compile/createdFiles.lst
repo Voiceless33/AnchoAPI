@@ -1,0 +1,6 @@
+com\codewithancho\api\spigot\managers\CommandManager$1.class
+com\codewithancho\api\spigot\managers\CommandManager.class
+com\codewithancho\api\spigot\annotations\Command.class
+com\codewithancho\api\spigot\utils\ChatUtils.class
+com\codewithancho\api\spigot\utils\ReflectionUtils.class
+com\codewithancho\api\spigot\base\BaseCommand.class
