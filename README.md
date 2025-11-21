@@ -5,9 +5,14 @@ It provides a powerful command system, advanced item tools, an item-leveling fra
 
 ---
 
-## 📦 Installation
+## 📖 Table of Contents
 
-### Maven
+* [📦 Installation and Setup](#installation-and-setup)
+* [💻 Usage](#pomxml)
+
+## 📦 Installation and Setup
+
+### `pom.xml`
 ```xml
 <repositories>
     <repository>
@@ -22,3 +27,7 @@ It provides a powerful command system, advanced item tools, an item-leveling fra
     <version>1.0.0</version>
 </dependency>
 ```
+
+---
+
+### 💻 Usage
