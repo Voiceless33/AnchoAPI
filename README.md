@@ -1,4 +1,4 @@
-![AnchoAPI Logo](images/api.png)
+![AnchoAPI Logo](images/logo.png)
 
 **AnchoAPI** is a lightweight and flexible developer API built to make Minecraft plugin creation faster, cleaner, and more modular.  
 It provides a powerful command system, advanced item tools, an item-leveling framework, storage utilities, and a set of helpful abstractions you can drop into any project.
