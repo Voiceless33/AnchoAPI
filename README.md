@@ -10,6 +10,9 @@
 * [Usage](#usage)
   * [CommandManager](#commandmanager-usage)
   * [ExampleCommand](#examplecommandjava)
+  * [AdvancedItem](#advanceditem)
+
+---
 
 ## Why
 **AnchoAPI** is a lightweight, flexible developer toolkit designed to help you build cleaner and more modular applications.
@@ -59,7 +62,8 @@ dependencies {
 
 ## Usage
 
-### CommandManager Usage
+> This is how you register your command manager and let it load all your command from a given package.
+##### CommandManager Usage
 ```java
 import com.codewithancho.api.spigot.managers.CommandManager;
 import com.codewithancho.api.spigot.managers.CommandMapExposer;
@@ -74,22 +78,15 @@ public void onEnable() {
 }
 ```
 
+> This is how your command needs to look like in order for the CommandManager to load it.
 ##### ExampleCommand.java
 ```java
-package com.codewithancho.example.commands;
-
-import com.codewithancho.api.spigot.annotations.*;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
-import org.jetbrains.annotations.NotNull;
-
 @CommandName("example")
 @CommandDescription("A simple example command")
 @CommandUsage("/example")
 @CommandPermission("anchoapi.example")
 @CommandAliases({"ex", "example-command"})
-public class TestCommand implements CommandExecutor {
+public class ExampleCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender,
@@ -101,5 +98,43 @@ public class TestCommand implements CommandExecutor {
         return true;
     }
 }
-
 ```
+
+## AdvancedItem
+
+> Creating custom **AdvancedItems**
+
+```java
+ItemStack diamondSword = new ItemStack(Material.DIAMOND_SWORD);
+
+// Wrapping the item
+AdvancedItem advanced = new AdvancedItem(diamondSword);
+
+// Add your API identifier
+advanced.addNamespacedData(
+        advanced.getAPI_ITEM_IDENTIFIER(),
+        PersistentDataType.INTEGER,
+        1
+        );
+
+// Make it soulbound to the player by passing his UUID
+advanced.addNamespacedData(
+            advanced.getSOULBOUND_ITEM_IDENTIFIER(),
+            PersistentDataType.STRING,
+            uuid.toString()
+);
+
+// If you want the item to glow or not, this can be toggled on and off with true/false
+advanced.setGlow(true);
+
+// Use the leveling system
+AdvancedItemLeveling leveling = advanced.getLeveling();
+
+leveling.initLeveling(1,0,100,10);
+// level = 1, xp = 0, xpPerLevel = 100, maxLevel = 10
+
+leveling.addExperience(120);
+// adds XP → auto levels up inside AdvancedItemLeveling
+```
+
+F
