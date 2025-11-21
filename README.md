@@ -11,8 +11,6 @@
   * [CommandManager](#commandmanager-usage)
   * [ExampleCommand](#examplecommandjava)
 
----
-
 ## Why
 **AnchoAPI** is a lightweight, flexible developer toolkit designed to help you build cleaner and more modular applications.
 Whether you're working on Minecraft plugins or general Java projects, **AnchoAPI** gives you a set of powerful utilities that streamline your workflow.
