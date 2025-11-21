@@ -1,7 +1,8 @@
-package com.codewithancho.api.spigot.managers;
+package com.codewithancho.api.spigot.builders;
 
 import com.codewithancho.api.spigot.base.Command;
 import org.bukkit.command.CommandExecutor;
+import org.bukkit.inventory.ItemRarity;
 
 import java.util.List;
 
